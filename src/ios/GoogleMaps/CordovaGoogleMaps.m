@@ -25,8 +25,8 @@
     //-------------------------------
     // Check the Google Maps API key
     //-------------------------------
-    NSString *APIKey = [((CDVViewController *)self.viewController).settings objectForKey:@"google_maps_ios_api_key"];
-
+    NSString *APIKey = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"Google Maps API Key"];
+    
     if (APIKey == nil) {
       NSString *errorTitle = [PluginUtil PGM_LOCALIZATION:@"APIKEY_IS_UNDEFINED_TITLE"];
       NSString *errorMsg = [PluginUtil PGM_LOCALIZATION:@"APIKEY_IS_UNDEFINED_MESSAGE"];
